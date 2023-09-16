@@ -1,5 +1,11 @@
 # udpxy for EdgeRouter X
 
+Copy udpxy to `/usr/bin/udpxy`  
+`chmod +x /usr/bin/udpxy`  
+Copy `udpxy.service` to `/lib/systemd/system` and run `systemctl daemon-reload`  
+Run `systemctl enable --now udpxy`
+
+
 ```
 udpxy 1.0-23.12 (prod) standard [Linux 3.10.107-UBNT mips]
 usage: udpxy [-vTS] [-a listenaddr] -p port [-m mcast_ifc_addr] [-c clients] [-l logfile] [-B sizeK] [-n nice_incr]

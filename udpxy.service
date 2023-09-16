@@ -1,0 +1,12 @@
+[Unit]
+Description=udpxy: UDP multicast to TCP (HTTP) relay proxy
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/udpxy -a switch0 -p 5000 -m eth0 -l /var/log/udpxy.log
+Type=forking
+Restart=on-failure
+KillMode=control-group
+
+[Install]
+WantedBy=multi-user.target
